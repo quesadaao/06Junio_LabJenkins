@@ -4,6 +4,7 @@ pipeline {
         stage('Installa make') {
             steps {
                 echo 'Install Make'
+                sh 'apt install build-essential'
                 sh 'apk add --no-cache make'
             }
         }
