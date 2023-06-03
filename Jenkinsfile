@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Source') {
-            steps {
-                git 'https://github.com/quesadaao/06Junio_LabJenkins.git'
-            }
-        }
         stage('Unit tests') {
             steps {
                 echo 'Unit tests!'
