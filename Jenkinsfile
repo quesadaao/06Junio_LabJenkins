@@ -1,6 +1,12 @@
 pipeline {
     agent any
     stages {
+        stage('Installa make') {
+            steps {
+                echo 'Install Make'
+                sh 'apk add --no-cache make'
+            }
+        }
         stage('Unit tests') {
             steps {
                 echo 'Unit tests!'
