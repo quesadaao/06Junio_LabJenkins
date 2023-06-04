@@ -4,6 +4,7 @@ pipeline {
         stage('Check Requirements') {
             steps {
                 echo 'Unit tests!'
+                sh 'pip install junitxml'
                 sh 'junit --version'
             }
         }
