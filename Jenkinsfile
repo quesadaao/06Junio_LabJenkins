@@ -4,16 +4,15 @@ pipeline {
         stage('Check Requirements') {
             steps {
                 echo 'Unit tests!'
-                sh 'make build test-unit'
                 sh 'junit --version'
-                archiveArtifacts artifacts: 'results/*.xml'
-                archiveArtifacts artifacts: 'results/*.html'
             }
         }
         stage('Unit tests') {
             steps {
                 echo 'Unit tests!'
+                sh 'junit --version'
                 sh 'make build test-unit'
+                sh 'junit --version'
                 archiveArtifacts artifacts: 'results/*.xml'
                 archiveArtifacts artifacts: 'results/*.html'
             }
