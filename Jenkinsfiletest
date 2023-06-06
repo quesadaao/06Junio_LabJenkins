@@ -7,4 +7,21 @@ pipeline {
       }
     }
   }
+  post {
+        always {
+            junit 'results/*_result.xml'
+            cleanWs()
+            emailext subject: 'Resultado de la construcción',
+                      body: 'Hola,\n\nLa construcción ha finalizado.',
+                      to: 'rastaoracle@gmail.com',
+                      from: 'rastaoracle@gmail.com'
+        }
+        failure {
+            cleanWs()
+            emailext subject: 'Resultado de la construcción fallida',
+                      body: 'Hola,\n\nLa construcción ha finalizado fallida.',
+                      to: 'rastaoracle@gmail.com',
+                      from: 'rastaoracle@gmail.com'
+        }
+    }    
 }

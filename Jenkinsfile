@@ -37,15 +37,15 @@ pipeline {
             cleanWs()
             emailext subject: 'Resultado de la construcción',
                       body: 'Hola,\n\nLa construcción ha finalizado.',
-                      to: 'quesadaao@hotmail.com',
-                      from: 'quesadaao@hotmail.com'
+                      to: 'rastaoracle@gmail.com',
+                      from: 'rastaoracle@gmail.com'
         }
         failure {
             cleanWs()
             emailext subject: 'Resultado de la construcción fallida',
                       body: 'Hola,\n\nLa construcción ha finalizado fallida.',
-                      to: 'quesadaao@hotmail.com',
-                      from: 'quesadaao@hotmail.com'
+                      to: 'rastaoracle@gmail.com',
+                      from: 'rastaoracle@gmail.com'
         }
     }    
 }
