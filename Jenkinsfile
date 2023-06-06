@@ -40,5 +40,12 @@ pipeline {
                       to: 'quesadaao@hotmail.com',
                       from: 'quesadaao@hotmail.com'
         }
-    }
+        failure {
+            cleanWs()
+            emailext subject: 'Resultado de la construcción fallida',
+                      body: 'Hola,\n\nLa construcción ha finalizado fallida.',
+                      to: 'quesadaao@hotmail.com',
+                      from: 'quesadaao@hotmail.com'
+        }
+    }    
 }
